@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 name: Build Android APK
 
 on:
@@ -40,12 +30,6 @@ jobs:
         distribution: 'zulu'
         java-version: '17'
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-
-    - name: Accept Android SDK Licenses
-      run: yes | sdkmanager --licenses || true
-
     - name: Sync Capacitor
       run: npx cap sync android
 
@@ -60,17 +44,3 @@ jobs:
       with:
         name: lion-browser-apk
         path: android/app/build/outputs/apk/debug/app-debug.apk
-
-
-
-
-
-
-
-
-
-
-
-
-
-
